@@ -1,0 +1,28 @@
+
+<html>
+<body>
+<div style="margin-left: 40px">
+    <h2>
+        <ul> Lista Aktywności:
+    </h2>
+    {% for activity in activity %}
+        <table>
+
+
+            <td width="300" height="30">
+                <h3>
+                    <li>{{ activity.name }}</td>
+            <td><a class="btn btn-info" href="post/{{activity.id}}" role="button">Stwórz nowe spotkanie</a></td>
+            </h3></li>
+        </table>
+        </ul>
+
+    {% endfor %}
+</div>
+
+{% block body %}
+{% endblock %}
+
+
+</body>
+</html>

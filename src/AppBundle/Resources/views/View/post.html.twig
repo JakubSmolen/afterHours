@@ -1,0 +1,38 @@
+{% extends "AppBundle:View:homepage.html.twig" %}
+
+{% block body %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-4">
+
+
+                {{ form_start(form) }}
+                <br>
+                <div>
+                    {{ form_label(form.placeMeeting) }}
+                    <br>
+                    {{ form_widget(form.placeMeeting) }}
+                </div>
+                <br>
+                <div>
+                    {{ form_label(form.date) }}
+                    {{ form_widget(form.date) }}
+                </div>
+                <br>
+                <div>
+                    {{ form_label(form.description) }}
+                    <br>
+                    {{ form_widget(form.description) }}
+                </div>
+                <div>
+                    {{ form_widget(form.save) }}
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
