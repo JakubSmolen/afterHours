@@ -1,5 +1,15 @@
-{% extends "@FOSUser/layout.html.twig" %}
-
-{% block fos_user_content %}
-{% include "@FOSUser/Profile/show_content.html.twig" %}
-{% endblock fos_user_content %}
+{% extends "AppBundle:View:basicView.html.twig" %}
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-md-offset-4">
+                <h3 class="form-signin-heading">Twój profil</h3>
+                <h4>
+                {% block fos_user_content %}
+                    {% include "@FOSUser/Profile/show_content.html.twig" %}
+                {% endblock fos_user_content %}
+                </h4>
+            </div>
+        </div>
+    </div>
+{% endblock %}

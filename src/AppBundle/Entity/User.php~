@@ -50,36 +50,11 @@ class User extends BaseUser{
     }
 
 
-    /**
-     * Add activity
-     *
-     * @param \AppBundle\Entity\ActivityList $activity
-     * @return User
-     */
-    public function addActivity(\AppBundle\Entity\ActivityList $activity)
-    {
-        $this->activity[] = $activity;
 
-        return $this;
-    }
 
-    /**
-     * Remove activity
-     *
-     * @param \AppBundle\Entity\ActivityList $activity
-     */
-    public function removeActivity(\AppBundle\Entity\ActivityList $activity)
-    {
-        $this->activity->removeElement($activity);
-    }
 
-    /**
-     * Get activity
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getActivity()
-    {
-        return $this->activity;
-    }
+
 }
+
+
+

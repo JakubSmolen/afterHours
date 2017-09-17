@@ -1,0 +1,74 @@
+{% extends "AppBundle:View:basicView.html.twig" %}
+{% block body %}
+    <div style="margin-left: 60px">
+        <h3>
+            Lista Spotkań :
+        </h3>
+        <table width="450" height="30">
+
+
+            {% for list in activityList %}
+                {% if date(list.date) > date() %}
+                    <tr>
+                        <td>
+
+                            <ul ><h4">Nazwa spotkania: {{ list.name.name }}</h4>
+
+
+                                <li ><h5>Miejsce spotkania: {{ list.placeMeeting }}</h5>
+
+
+                                <li><h5>Data spotkania: {{ list.date|date("d-m-Y H:i:s") }}</h5>
+
+
+                                <li><h5>Opis spotkania: {{ list.description }}</h5>
+
+                                </li>
+
+
+                            </ul>
+
+                            <br>
+
+                            <h4>Lista zapisanych użytkowników:</h4>
+
+
+                            {% for user in list.user %}
+                                »{{ user.username }}
+                                <br>
+                            {% endfor %}
+
+
+
+                            {% if list.user.contains(app.user) %}
+
+                                <h4><b style="background: red">Bierzesz udział w wydarzeniu</b></h4>
+
+                            {% else %}
+                                <a class="btn btn-warning" href="joinMeeting/{{ list.id }}" role="button">Dołacz do spotkania</a>
+
+                            {% endif %}
+
+
+                            <hr/>
+                        </td>
+
+
+                    </tr>
+
+
+                {% endif %}
+
+
+
+
+
+
+            {% endfor %}
+
+        </table>
+    </div>
+
+{% endblock %}
+
+

@@ -1,8 +1,6 @@
-{% extends "AppBundle:View:homepage.html.twig" %}
+{% extends "AppBundle:View:basicView.html.twig" %}
 
 {% block body %}
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-md-offset-4">
@@ -13,7 +11,7 @@
                 <div>
                     {{ form_label(form.placeMeeting) }}
                     <br>
-                    {{ form_widget(form.placeMeeting) }}
+                    {{ form_widget(form.placeMeeting, {'attr': {'class': 'form-control', 'placeholder': 'Miejsce spotkania'}}) }}
                 </div>
                 <br>
                 <div>
@@ -21,13 +19,14 @@
                     {{ form_widget(form.date) }}
                 </div>
                 <br>
+
+                {{ form_label(form.description) }}
+                <br>
+
+                {{ form_widget(form.description, {'attr': {'class': 'form-control', 'placeholder': 'Opisz spotkanie'}} )}}
+
                 <div>
-                    {{ form_label(form.description) }}
-                    <br>
-                    {{ form_widget(form.description) }}
-                </div>
-                <div>
-                    {{ form_widget(form.save) }}
+                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-warning', 'placeholder': 'Utwórz wydarzenie'}}) }}
                 </div>
                 {{ form_end(form) }}
             </div>
