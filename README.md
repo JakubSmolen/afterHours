@@ -1,6 +1,5 @@
 afterHours
 ===========
 
-It's an app to meet new people and make appointments with them for meetings
+####It's an app to meet new people and make appointments with them for meetings
 
-###Application under development.
